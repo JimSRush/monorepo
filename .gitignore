@@ -1,0 +1,5 @@
+node_modules/
+# Random annoying stuff
+.idea
+package.lock
+.DS_store
