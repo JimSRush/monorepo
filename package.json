@@ -35,7 +35,7 @@
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook -c .storybook -o .out",
     "clean": "git clean -fdx && npx lerna clean --yes && npx lerna exec --parallel -- npx rimraf dist",
     "clean:nuclear": "npx rimraf node_modules && yarn cache clean && npm cache clean --force && npm cache verify"
   }
