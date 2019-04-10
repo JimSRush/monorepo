@@ -7,6 +7,7 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "@storybook/addon-actions": "^4.0.0-alpha.25",
+    "@storybook/addon-knobs": "^4.0.6",
     "@storybook/addon-links": "^4.0.0-alpha.25",
     "@storybook/addons": "^4.0.0-alpha.25",
     "@storybook/react": "^4.0.0-alpha.25",
@@ -34,6 +35,8 @@
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "clean": "git clean -fdx && npx lerna clean --yes && npx lerna exec --parallel -- npx rimraf dist",
+    "clean:nuclear": "npx rimraf node_modules && yarn cache clean && npm cache clean --force && npm cache verify"
   }
 }
