@@ -4,5 +4,8 @@ import Widebar from '../src';
 
 storiesOf('Widebar', module)
   .add('with text', () => (
-    <Widebar text={"Some stuff happened today"}/>
+    <Widebar 
+    text={"Some stuff happened today"}
+    type={"TYPE_BLACK"}
+  />
   ));

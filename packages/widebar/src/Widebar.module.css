@@ -11,5 +11,9 @@
 .widebarAlert {
     color: #fff;
     background-color: #d34141;
-    border-bottom: 0;
+}
+
+.widebarBlack {
+    color: #fff;
+    background-color: black;
 }
