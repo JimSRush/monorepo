@@ -16,7 +16,7 @@ storiesOf('PlaylistItem', module)
   .add('with text', () => {
     return <PlaylistItem 
       title={text('title', 'Piers Steel: Why we procrastinate - and how to stop')}
-      duration={text('duration', "16 min")}
+      duration={text('duration', `8′22″`)}
       broadcast={text('broadcast', 'RNZ Music')}
       date={text('date', '06 Jan 2019')}
       hasDivider={boolean('Has divider', true)}
