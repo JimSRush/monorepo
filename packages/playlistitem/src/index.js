@@ -1,6 +1,11 @@
 import React from 'react';
 import styles from './PlaylistItem.module.css';
 import cn from 'classnames';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faTimes);
 
 import Proptypes from 'prop-types';
 
@@ -11,20 +16,25 @@ const PlaylistItem = ({
     duration,
     broadcast,
     date,
-    hasDivider
+    hasDivider,
+    selected
 }) => (
-    <div>
+    <div className={cx({
+        [styles.playlistItem]: true, 
+        [styles.divider]: hasDivider,
+        [styles.selected]: selected
+    })}>
         <div>
             <div>
-                <span>{title}</span>
-                <span>{duration}</span>
+                <a className={cx(styles.playlistTitle)}>{title}&nbsp;</a>
+                <span className={cx(styles.playlistDuration)}>{duration}</span>
+                <FontAwesomeIcon icon="times" className={styles.remove}/>
             </div>
-            <div>
-                <span>{broadcast}</span>
-                <span>{date}</span>
+            <div className={cx(styles.playlistItemFooter)}>
+                <span className={cx(styles.playlistItemProgramTitle)}>{broadcast}</span>
+                <span>({date})</span>
             </div>
         </div>
-        <hr/>
     </div>
 );
 
@@ -33,7 +43,8 @@ PlaylistItem.propTypes = {
     duration: Proptypes.string,
     broadcast: Proptypes.string,
     date: Proptypes.string,
-    hasDivider: Proptypes.bool
+    hasDivider: Proptypes.bool,
+    selected: Proptypes.bool
 }
 
 export default PlaylistItem;
