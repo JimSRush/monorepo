@@ -7,7 +7,8 @@ const cx = cn.bind(styles);
 
 const ImageItem = ({
     image,
-    buttonText
+    buttonText,
+    onClick
 }) => {
     return <div className={cx(styles.imageGridItem)}>
         <div >
@@ -15,7 +16,7 @@ const ImageItem = ({
                 <img src={image} className={cx(styles.image)}/>
             </div>
             <div className={cx(styles.imageGridFooter)}>
-                <button className={cx(styles.viewButton)}>{buttonText}</button>
+                <button onClick={onClick} className={cx(styles.viewButton)}>{buttonText} &#8594;</button>
             </div>
         </div>
     </div>

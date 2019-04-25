@@ -6,6 +6,6 @@ storiesOf('ImageItem', module)
   .add('with text', () => {
     return <ImageItem 
         image={"http://placekitten.com/250/250"}
-        buttonText={"View →"}
+        buttonText={"View"}
     />
   });
